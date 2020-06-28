@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格学习</title>
+</head>
+<body>
+<!-- table
+行：tr  rows  横向为行
+列：td  col   纵向为列
+跨行和跨列都是针对每一个单元格而言的
+colspan用来指定单元格横向跨越的列数：colspan就是合并列的，colspan=2的话就是合并两列。
+
+rowspan用来指定单元格纵向跨越的行数:rowspan就是用来合并行的，比如rowspan=2就是合并两行，
+
+-->
+<table border="1px">
+    <tr>
+        <!-- colspan        -->
+        <td colspan="4">1-1</td>
+        <td>1-2</td>
+        <td>1-3</td>
+    </tr>
+    <tr>
+        <td rowspan="2">2-1</td>
+        <td>2-2</td>
+        <td>2-3</td>
+    </tr>
+    <tr>
+        <td>3-1</td>
+        <td>3-2</td>
+        <td>3-3</td>
+    </tr>
+</table>
+
+
+<!--手写一个5行3列的表格-->
+<table border="1px">
+    <tr>
+        <td colspan="3">学生成绩</td>
+    </tr>
+    <tr>
+        <td rowspan="2">狂神</td>
+        <td>语文</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>数学</td>
+        <td>26</td>
+    </tr>
+    <tr>
+        <td rowspan="2">秦疆</td>
+        <td>语文</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>数学</td>
+        <td>26</td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>
