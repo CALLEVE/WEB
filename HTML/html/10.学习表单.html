@@ -10,18 +10,100 @@
  action:表单提交的位置，可以是网站，也可以是一个请求处理地址
  method： post，get 提交方式
         post:比较安全，传输大文件
-        get:可以在url中看到我们提交的信息，不安全，但是搞笑
+        get:可以在url中看到我们提交的信息，不安全，但是高效
  -->
 
 
 <form action="1.第一个网页.html" method="get">
-    <p>名字：<input type="text" name="username"></p>
+    <!--  maxlength 调整的是 文本框内允许输入的字符的长度，size 是为了调整文本框自身的长度
+          value 是默认值
+     -->
+    <p>名字：<input type="text" name="username" value="狂神++++" maxlength="15" size="50" ></p>
+    <p>test：<input type="text" name="test" value="狂神test" maxlength="20" size="100"></p>
+    <!-- required 限定该控件是否需要填值   -->
+    <p><input type="text" placeholder="请测试" required></p>
     <p>密码：<input type="password" name="pwd"></p>
 
+    <!--  radio 单选框 控件存在组的概念 ，用name属性来进行约束 -->
+    <p>性别：
+        <input type="radio" value="boy" name="sex"/>男
+        <input type="radio" value="girl" name="sex"/>女
+    </p>
+    <p>爱好：
+        <!--    checkbox 多选框     -->
+        <input type="checkbox" value="sleep" name="hobby"/>睡觉
+        <input type="checkbox" value="code" name="hobby"/>代码
+        <input type="checkbox" value="game" name="hobby"/>游戏
+        <input type="checkbox" value="music" name="hobby"/>听歌
+    </p>
+    <p>按钮：
+        <input type="button" name="btn1" value="sss">
+<!--        <input type="image" src="../resources/image/原图.jpg">-->
+    </p>
     <p>
         <input type="submit">
         <input type="reset">
     </p>
+
+    <p>国家：
+        <!-- 对应的value值,一是英文字母，或者数字代码的格式       -->
+        <select name="列表名称" id="">
+            <option value="中国">中国</option>
+            <option value="美国">美国</option>
+            <option value="瑞士" selected>瑞士</option>
+            <option value="英国">英国</option>
+        </select>
+    </p>
+
+    <!-- 文本域：   -->
+    <p>反馈：
+        <textarea rows="5" cols="50">
+
+        </textarea>
+    </p>
+
+
+    <!-- 文件域： -->
+    <p>
+        <input type="file" name="files">
+        <input type="button" value="上传" name="upload">
+    </p>
+    
+    <!-- 只是带有简单的验证功能  -->
+    <!--  邮件验证  -->
+    <p>邮箱：
+        <input type="email" name="email">
+    </p>
+
+    <!-- URL: -->
+    <p>URL
+        <input type="url" name="url">
+    </p>
+    <!--数字-->
+    <p>数字
+        <!-- max表示最大值，min便是最小值，step 表示数字之间的间隔       -->
+        <input type="number" name="num" max="100" min="0" step="10">
+    </p>
+
+    <!-- 滑块  -->
+    <p>滑块
+        <input type="range" min="0" max="100" step="2">
+    </p>
+
+    <!--搜索-->
+    <p>
+        <input type="search" name="search">
+    </p>
+
+    <!-- 增强鼠标可用性，可以实现光标锁定 -->
+    <p>
+        <label for="mark">点击试试</label>
+        <input type="text" id="mark">
+    </p>
+
+
+
+
 
 </form>
 
@@ -29,8 +111,23 @@
 
 
 
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
