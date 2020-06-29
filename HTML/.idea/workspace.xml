@@ -1,29 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="611feff1-ed0d-4dbd-9fd1-ac1100476472" name="Default Changelist" comment="">
+    <list default="true" id="9c2f912e-c199-48c5-aecc-75c44e5fccee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/1.第一个网页.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/1.第一个网页.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML总结.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/HTML总结.xmind" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/10.学习表单.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/10.学习表单.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/2.基本标签.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/2.基本标签.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/4.链接标签.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/4.链接标签.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1dvgRCBJXVewp6r3uAuLZRDkppX" />
+  <component name="ProjectId" id="1dzgtDjgsezKBVDwlR3Dmf4q2nM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="showExcludedFiles" value="true" />
@@ -32,19 +23,9 @@
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/video" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\学习\WEB\WEB\HTML\resources\video" />
-      <recent name="E:\学习\WEB\WEB\HTML\resources\audio" />
-    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -63,13 +44,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="611feff1-ed0d-4dbd-9fd1-ac1100476472" name="Default Changelist" comment="" />
-      <created>1593310969809</created>
+      <changelist id="9c2f912e-c199-48c5-aecc-75c44e5fccee" name="Default Changelist" comment="" />
+      <created>1593433547589</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1593310969809</updated>
-      <workItem from="1593310972461" duration="13524000" />
-      <workItem from="1593395806371" duration="16125000" />
+      <updated>1593433547589</updated>
+      <workItem from="1593433549957" duration="3666000" />
     </task>
     <servers />
   </component>
@@ -77,21 +57,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="422" y="91" key="SettingsEditor" timestamp="1593315111305">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1029" y="316" key="FileChooserDialogImpl" timestamp="1593438111527">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="422" y="91" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593315111305" />
-    <state x="580" y="302" key="com.intellij.ide.util.TipDialog" timestamp="1593395819132">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1029" y="316" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1593438111527" />
+    <state x="562" y="629" key="com.intellij.ide.util.TipDialog" timestamp="1593433549916">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="580" y="302" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593395819132" />
-    <state x="573" y="324" width="840" height="1034" key="run.anything.popup" timestamp="1593311421896">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="562" y="629" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1593433549916" />
+    <state x="562" y="399" key="new project wizard" timestamp="1593438136344">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="573" y="324" width="840" height="1034" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593311421896" />
-    <state x="501" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1593334720610">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="501" y="5" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593334720610" />
+    <state x="562" y="399" key="new project wizard/0.0.2560.1400@0.0.2560.1400" timestamp="1593438136344" />
   </component>
 </project>
