@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4.层次选择器</title>
+    <style>
+        /*后代选择器*/
+        /*body p{*/
+        /*    background: blueviolet;*/
+        /*}*/
+
+        /*子选择器*/
+        /*body>p{*/
+        /*    background: chartreuse;*/
+        /*}*/
+
+        /*相邻（直接上下）兄弟选择器：可以用多个，但是向下兼容,下面的一个标签会生效*/
+
+        /*.active + p {*/
+        /*    background: brown;*/
+        /*}*/
+
+        /*通用选选择器*/
+        .active~p{
+            background: darkblue;
+        }
+
+    </style>
+
+</head>
+<body>
+    <p>px</p>
+    <p class="active">p0</p>
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <ul>
+        <li><p>p4</p></li>
+        <li><p>p5</p></li>
+        <li><p>p6</p></li>
+    </ul>
+    <p>pp</p>
+    <p>p8</p>
+    <p>p9</p>
+    <p>p10</p>
+</body>
+</html>
