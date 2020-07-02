@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相邻（直接上下）兄弟选择器</title>
+    <style>
+        /*相邻（直接上下）兄弟选择器：可以用多个，但是向下兼容,下面的第一个p标签会生效*/
+        .active + p{
+            background: brown;
+        }
+        .sss + ul{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <p>px</p>
+    <p class="active">p0</p>
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <a href="" class="sss">5555</a>
+    <ul>
+        <li><p>p4</p></li>
+        <li><p>p5</p></li>
+        <li><p>p6</p></li>
+    </ul>
+    <p>pppp</p>
+    <p class="active">p7</p>
+    <p>p8</p>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6.属性选择器</title>
+    <style>
+    /*属性选择器  格式：a[]{}、p[]{}  */
+    /* 部分匹配的生效格式 为 *=    */
+    /*a[href*="images"]{*/
+    /*    background-color: fuchsia;*/
+    /*}*/
+    /*a[href*="/a"]{*/
+    /*    background-color: blueviolet;*/
+    /*}*/
+    /*a[href][class]{*/
+    /*    background-color: chartreuse;*/
+    /*}*/
+    /*
+        属性名，属性名 = 属性值（正则）
+        = 绝对等于
+        *= 包含这个元素
+        ^= 以这个开头
+        $= 以这个结尾
+
+     */
+    .demo a{
+        float: left;
+        display: block;
+        height: 50px;
+        width: 50px;
+        border-radius: 10px;
+        background-color: chartreuse;
+        /* text-align 一般是左右居中 */
+        text-align: center;
+        color: gray;
+        text-decoration: none;
+        margin-right:5px ;
+        font: bold 20px/50px Arial;
+    }
+    a[href$=jpg]{
+        background-color: aqua;
+    }
+
+
+    </style>
+</head>
+<body>
+<!-- 调试各种属性 -->
+<p class="demo">
+    <a href="http://www.baidu.com" class="links item first" id="first">1</a>
+    <a href="" class="links item active" target="_blank" title="test">2</a>
+    <a href="images/123.html">3</a>
+    <a href="images/123.png">4</a>
+    <a href="images/123.jpg">5</a>
+    <a href="abc">6</a>
+    <a href="/a.pdf">7</a>
+    <a href="/abc.pdf">8</a>
+    <a href="abc.doc">9</a>
+    <a href="abcd.doc">10</a>
+    <a href="abc.xls">9</a>
+    <a href="abcd.xls">10</a>
+</p>
+</body>
+</html>
