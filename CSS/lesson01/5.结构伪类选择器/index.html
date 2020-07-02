@@ -5,22 +5,39 @@
     <title>5.结构伪类选择器</title>
     <style>
 
-        /*ul的第一个子元素*/
-        ul li:first-child{
-            background: darkblue;
-        }
-        /*https://www.w3school.com.cn/cssref/css_selectors.asp*/
-        /*ul的最后一个子元素*/
-        ul li:last-child{
-            background-color: darkred;
+        /*!*ul的第一个子元素*!*/
+        /*li p:first-child{*/
+        /*    background: violet;*/
+        /*}*/
+        /*!*https://www.w3school.com.cn/cssref/css_selectors.asp*!*/
+
+        /*!*ul的最后一个子元素*!*/
+        /*ul li:last-child{*/
+        /*    background-color: darkred;*/
+        /*}*/
+        /*!**/
+        /*选中p1；（有点逆向思维），首先找到父元素，然后找到该父元素下的第一个元素*/
+        /**!*/
+        /*p:nth-child(1){*/
+        /*    background-color: darkorchid;*/
+        /*}*/
+        /*body p:first-child{*/
+        /*    color: greenyellow;*/
+        /*}*/
+
+        /*------------------------------*/
+        /* 会让所有位于第一个元素的p标签生效  */
+        /*p:first-child{*/
+        /*    color: crimson;*/
+        /*}*/
+        /* el 是生效范围限制 el 是大范围，即该范围下的p标签均满足条件
+           first-child 是对p标签的限制：指选择第一个指令的元素
+         */
+        body p:first-child{
+            color: chocolate;
         }
 
-        /*
-        选中p1；（有点逆向思维），首先找到父元素，然后找到该父元素下的第一个元素
-        */
-        p:nth-child(1){
-            background-color: darkorchid;
-        }
+
 
 
 
@@ -33,10 +50,15 @@
     <p>p2</p>
     <p>p3</p>
     <ul>
-        <li><p>p4</p></li>
+        <li><p>p4</p><p>p41</p><p>p42</p></li>
         <li><p>p5</p></li>
         <li><p>p6</p></li>
     </ul>
+    <ol>
+        <li><p>pl1</p></li>
+        <li><p>pl2</p></li>
+        <li><p>pl3</p></li>
+    </ol>
     <p>pp</p>
     <p>p8</p>
     <p>p9</p>
@@ -57,6 +79,6 @@
     <p>pp</p>
     <p>p8</p>
     <p>p9</p>
-    <p>p10</p
+    <p>p10</p>
 </body>
 </html>
