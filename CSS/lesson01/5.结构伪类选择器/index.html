@@ -27,16 +27,18 @@
 
         /*------------------------------*/
         /* 会让所有位于第一个元素的p标签生效  */
-        /*p:first-child{*/
-        /*    color: crimson;*/
-        /*}*/
+        p:first-child{
+            color: crimson;
+        }
         /* el 是生效范围限制 el 是大范围，即该范围下的p标签均满足条件
            first-child 是对p标签的限制：指选择第一个指令的元素
          */
-        body p:first-child{
+        ul p:first-child{
             color: chocolate;
         }
-
+        e1:first-child{
+            background-color: aqua;
+        }
 
 
 
