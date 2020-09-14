@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9c2f912e-c199-48c5-aecc-75c44e5fccee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML总结.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/HTML总结.xmind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/html/10.学习表单.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/10.学习表单.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +11,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Maven\MavenRepository" />
+        <option name="mavenHome" value="D:/Maven/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\Maven\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1dzgtDjgsezKBVDwlR3Dmf4q2nM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -26,6 +33,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -50,6 +58,8 @@
       <option name="presentableId" value="Default" />
       <updated>1593433547589</updated>
       <workItem from="1593433549957" duration="3666000" />
+      <workItem from="1594039916983" duration="86000" />
+      <workItem from="1597747876064" duration="24000" />
     </task>
     <servers />
   </component>
@@ -57,14 +67,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1029" y="316" key="FileChooserDialogImpl" timestamp="1593438111527">
+    <state x="1029" y="316" key="FileChooserDialogImpl" timestamp="1594039987224">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1029" y="316" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1593438111527" />
-    <state x="562" y="629" key="com.intellij.ide.util.TipDialog" timestamp="1593433549916">
+    <state x="1029" y="316" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1594039987224" />
+    <state x="699" y="174" key="SettingsEditor" timestamp="1594039990300">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="562" y="629" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1593433549916" />
+    <state x="699" y="174" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1594039990300" />
+    <state x="562" y="629" key="com.intellij.ide.util.TipDialog" timestamp="1597747879279">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="562" y="629" key="com.intellij.ide.util.TipDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1597747879279" />
     <state x="562" y="399" key="new project wizard" timestamp="1593438136344">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
