@@ -135,6 +135,155 @@ body>p{
 
 
 
+浮动：
+
+父级边框的塌陷问题：
+
+1.增加父级高度 
+
+```css
+#father{
+    border:1px #00 solid;
+    height:800px;
+}
+```
+
+
+
+2.增加一个空的div标签，清除浮动
+
+```css
+<div class = "clear"></div>
+.clear{
+ 	clear:both;
+    margin:0;
+    padding:0;
+}
+```
+
+
+
+3.overflow
+
+在父级元素中，增加一个overflow：hidden;
+
+
+
+4.在父类中添加一个伪类
+
+```css
+#father：after{
+    content: '';
+    dispaly:block;
+    clear:both;
+}
+```
+
+
+
+小结：
+
+1.浮动元素后面增加空div：简单，代码中尽量避免空div
+
+2.设置父元素的高度：简单，元素假设有了固定的高度，就会被限制
+
+3.overflow：简单 下来的一些场景使用
+
+4.在父类中添加一个伪类：after （推荐），写法稍微复杂没有副作用，推荐使用！
+
+
+
+## 5.对比：
+
+display：反向不可控制
+
+float：浮动起来会脱离标准文档流。所以要解决父级边框塌陷的问题
+
+
+
+## 6.定位
+
+6.1 相对定位
+
+```css
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 20px;
+        }
+        div{
+            margin: 10px;
+            padding: 5px;
+            font-size: 12px;
+            line-height: 25px;
+        }
+        #father{
+            border: 1px solid #666;
+        }
+        #first{
+            background-color: #C850C0;
+            border: 1px dashed #dac90c;
+            position: relative;
+            top: -20px;
+            left: 20px;
+        }
+        #second{
+            background-color:sandybrown ;
+            border: 1px dashed rgba(12, 208, 197, 1);
+        }
+        #thrid{
+            background-color: aqua;
+            border: 1px dashed #6ac61c;
+        }
+    </style>
+</head>
+<body>
+<div id="father">
+    <div id="first">第一个盒子</div>
+    <div id="second">第二个盒子</div>
+    <div id="thrid">第三个盒子</div>
+</div>
+
+</body>
+</html>
+```
+
+***相对定位是相对自己的原始位置***
+
+
+
+
+
+
+
+6.2 绝对定位
+
+定位：基于xx定位，上右下做
+
+1.没有父级元素定位的前提下，相对于浏览器定位
+
+2.假设父级元素存在定位，我们通常会相对于父级进行偏移。
+
+
+
+
+
+
+
+6.3 z-index
+
+
+
+
+
+
+
+
+
 
 
 
