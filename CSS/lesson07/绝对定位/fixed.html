@@ -3,8 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            border: 1px solid red;
+            height: 1000px;
+        }
+        /* 第一个子元素,绝对定位，相对于浏览器*/
+        div:nth-of-type(1){
+            width: 100px;
+            height: 100px;
+            background-color: #C850C0;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+        /* 第二个子元素,固定定位 */
+        div:nth-of-type(2){
+            width: 50px;
+            height: 50px;
+            background-color: #6ac61c;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-
+<div>div1</div>
+<div>div2</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

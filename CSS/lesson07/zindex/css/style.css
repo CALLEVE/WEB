@@ -1,0 +1,37 @@
+
+#content{
+    width: 474px;
+    margin: 0;
+    padding: 0;
+    /*溢出*/
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 25px;
+    border: 1px solid #000000;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*父级元素相对定位*/
+#content ul{
+    position: relative;
+}
+/*再做绝对定位*/
+.tipText,.tipBg{
+    position: absolute;
+    width: 380px;
+    top: 216px;
+}
+.tipText{
+    color: white;
+    /*其实就是层级*/
+    z-index: 99;
+}
+.tipBg{
+    background: #000000;
+    opacity: 0.5; /*背景透明度*/
+}
+
