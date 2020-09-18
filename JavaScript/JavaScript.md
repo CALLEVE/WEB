@@ -262,6 +262,532 @@ arr[1][1]
 
 ### 3.3 对象 
 
+多个键值对的模式
+
+```javascript
+var 对象名 = {
+    属性名：属性值,
+    属性名：属性值
+    属性名：属性值
+}
+
+```
+
+
+
+js中对象，{...}表示一个对象，键值对描述属性 XXX：xxx    均用 , 隔开，最后一个属性不加逗号！
+
+1.对象赋值
+
+```
+person.name = "qwerty"
+"qwerty"
+person.name
+"qwerty"
+```
+
+
+
+2.使用一个不存在的对象属性，不会报错！undefined
+
+
+
+
+
+3.动态删减属性
+
+```javascript
+delete person.name
+true
+person
+{age: 3, email: "2342", score: 0}
+```
+
+
+
+4.动态添加属性
+
+```javascript
+person.sss = "sss"
+"sss"
+person
+{age: 3, email: "2342", score: 0, sss: "sss"}
+```
+
+
+
+5.判断属性值是否在这个对象中！ xxx in xxx！
+
+```javascript
+'age' in  person
+true
+'toStrig' in person
+false
+person.toString
+ƒ toString() { [native code] }
+'toString' in person
+true
+```
+
+
+
+6.判断一个属性是否是这个对象自身拥有的 hasOwnProperty()
+
+```javascript
+person.hasOwnProperty('age')
+true
+person.hasOwnProperty('toString')
+false
+```
+
+
+
+### 3.4  流程控制
+
+if判断
+
+```javascript
+var age = 3;
+if(age>3){
+	alert("haha");
+}else{
+	alert("kuwa~");
+}
+```
+
+
+
+循环
+
+while循环，避免程序死循环
+
+```javascript
+while(age<100){
+	age = age +1 ;
+	console.log(age)
+}
+
+do{
+	age = age + 1;
+	console.log(age)
+}while(age<100)
+
+
+```
+
+
+
+for循环
+
+```javascript
+for( let i = 0;i<100; i++){
+    console.log(i);
+}
+
+```
+
+
+
+foreach循环
+
+```javascript
+var age = [12,3,11,23,14,15,23,25];
+
+//函数
+age.forEach(function(value)){
+    concsole.log(value);
+}
+
+```
+
+
+
+### 3.5  Map和Set
+
+ES6的新特性
+
+Map：格式
+
+```javascript
+var mapTest = new Map([["xx",1],["yy",2],["zz",3]]);
+```
+
+```javascript
+map
+Map(3) {"tom" => 100, "jack" => 90, "haha" => 80}
+map
+Map(3) {"tom" => 100, "jack" => 90, "haha" => 80}
+map.set('admin',111)
+Map(4) {"tom" => 100, "jack" => 90, "haha" => 80, "admin" => 111}
+map.set("admmmmm",111)
+Map(5) {"tom" => 100, "jack" => 90, "haha" => 80, "admin" => 111, "admmmmm" => 111}
+map
+Map(5) {"tom" => 100, "jack" => 90, "haha" => 80, "admin" => 111, "admmmmm" => 111}
+
+map
+Map(3) {"tom" => 100, "jack" => 90, "haha" => 80}
+map.set("tom", 8888)
+Map(3) {"tom" => 8888, "jack" => 90, "haha" => 80}
+map.set("sss", 759);
+Map(4) {"tom" => 8888, "jack" => 90, "haha" => 80, "sss" => 759}
+map.delete("sss")
+true
+map
+Map(3) {"tom" => 8888, "jack" => 90, "haha" => 80}
+```
+
+
+
+Set:无序不重复的集合
+
+```javascript
+set
+Set(5) {1, 2, 4, 5, 111}
+set.delete(2)
+true
+set
+Set(4) {1, 4, 5, 111}
+set.add(999)
+Set(5) {1, 4, 5, 111, 999}
+
+
+Set(4) {1, 2, 4, 111}
+set.add(999)
+Set(5) {1, 2, 4, 111, 999}
+set.delete(2)
+true
+set
+Set(4) {1, 4, 111, 999}
+console.log(set.has(111))
+VM271:1 true
+undefined
+```
+
+
+
+### 3.6 iterator
+
+遍历map
+
+```javascript
+var map = new Map([["tom",1],["jack",2],["jerry",3]]);
+for (let x of map){
+	console.log(x)
+}
+
+var set = new Set([5,6,7]);
+for (let y of set){
+	console.log(y)
+}
+
+
+(2) ["tom", 1]
+(2) ["jack", 2]
+(2) ["jerry", 3]
+ 5
+ 6
+ 7
+```
+
+
+
+## 4.函数
+
+### 4.1  定义函数
+
+> 定义方式一
+
+
+
+绝对值函数
+
+```javascript
+ function abs(x) {
+            if (x>=0){
+                return x;
+            }else{
+                return -x;
+            }
+        }
+
+abs(5)
+5
+abs()
+NaN
+
+```
+
+return 代表函数结束，返回结果！
+
+如果没有执行return，函数执行完也会返回结果，结果就是undefined
+
+
+
+> 定义方式二
+>
+> ```javascript
+>  var abs = function (x) {
+>             if (x>=0){
+>                 return x;
+>             }else{
+>                 return -x;
+>             }
+>         }
+> 
+> 
+>  abs(5)
+> 5
+> abs(-5)
+> 5
+> 
+> 
+> ```
+
+
+
+手动抛出异常
+
+```javascript
+var abs = function (x) {
+            if (typeof x!='number'){
+                throw 'Not a Number';
+            }
+            if (x>=0){
+                return x;
+            }else{
+                return -x;
+            }
+        }
+```
+
+
+
+参数问题
+
+>arguments
+
+arguments 是一个js免费赠送的关键字
+
+代表，传递进来的所有参数，是一个数组
+
+
+
+问题：arguments包含所有的参数，我们有时候想使用多余的参数来进行附加操，需要排除已有参数
+
+
+
+>rest
+
+以前
+
+```java
+if(arguments.length>2){
+    for(var i=2;i<arguments.length;i++){
+        
+    }
+}
+
+```
+
+
+
+ES6引入的新特性，获取处理已经定义的参数之外的所有参数  ...
+
+```javascript
+function aaa(a,b,...rest){
+    console.log("a=>"+a);
+    console.log("b=>"+b);
+    console.log(rest);
+}
+
+
+```
+
+
+
+### 4.2 变量的作用域
+
+在javascript中，var定义变量实际是存在作用域
+
+假设在函数体中，则在函数体外不可以使用
+
+```javascript
+function test(){
+	var x = 1;
+    x = x + 1;
+}
+x = x + 2; 
+// Uncaught ReferenceError: x is not defined
+```
+
+
+
+如果在函数内部，使用了相同命名的变量，只要在函数内，就不会冲突
+
+```javascript
+        function f1() {
+            var x = 1;
+            x = x + 1;
+        }
+        function f2() {
+            var x = 1;
+            x = x + 1;
+        }
+```
+
+
+
+内部函数可以访问外部函数的成员，反之则不行
+
+```javascript
+functtion f1(){
+    var x = 1;
+    
+    //内部函数可以访问外部函数的成员，反之则不行
+    function f2(){
+        var y = y + 1;
+    }
+    var z = y + 1;//Uncautch ReferenceError : y is not defined   
+}
+```
+
+
+
+
+
+```
+        function f1() {
+            var x = 1;
+            function f2() {
+                var x = 'A';
+                console.log('inner'+x);// output
+            }
+            console.log('outer'+x)
+            f2();
+        }
+        f1();
+```
+
+
+
+假设，内部函数变量和外部函数的变量，重名！
+
+```javascript
+function f1() {
+            var x = 1;
+            function f2() {
+                var x = 'A';
+                console.log('inner'+x);// output
+            }
+            console.log('outer'+x)
+            f2();
+        }
+        f1();
+
+```
+
+假设在javascript中函数查找变量从自身函数开始，有内向外 查找，假设外部存在这个同名的函数变量，则内部函数会屏蔽外部函数的变量。
+
+
+
+> 提升变量的作用域
+
+```javascript
+function test(){
+    var x = "x" + y;
+    console.log(x);
+    var y = ''y;
+}
+
+```
+
+结果： y undefined 
+
+说明：js执行引擎，自动提升了y的声明，但是不会提升y的赋值。
+
+建议js内对变量的定义，可以直接放在首行，便于代码维护。
+
+
+
+>全局函数
+
+```javascript
+// 全局变量
+x = 1;
+
+function f(){
+    console.log(x);
+}
+
+f();
+console.log(x);
+
+```
+
+
+
+> 全局对象 windows
+
+```java
+var x = "xx";
+alert(x);
+alert(windows)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
