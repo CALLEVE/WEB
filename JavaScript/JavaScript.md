@@ -655,7 +655,7 @@ functtion f1(){
 
 
 
-```
+```javascript
         function f1() {
             var x = 1;
             function f2() {
@@ -728,79 +728,307 @@ console.log(x);
 
 > 全局对象 windows
 
-```java
-var x = "xx";
-alert(x);
-alert(windows)
+```javascript
+    <script>
+        var x = 'xxx';
+        window.alert(x);
+        var  old_alert = window.alert;
+         old_alert(x)
+        window.alert = function () {
+
+        };
+         // 发现alert() 失效了
+        window.alert(123);
+
+        //恢复
+        window.alert = old_alert;
+        window.alert(354);
+    </script>
+```
+
+javascript实际上只有一个全局作用域，任何变量（函数同样也可以视为变量），假设没有在函数作用范围内找到，就会向外查找，如果在全局作用域都没有找到，报错`RefnecnceError`
+
+> 规范
+
+由于我们所有的全局变量都会绑定到我们的windows上，如果不同的js文件，使用了相同的全局变量，冲突->如果能够减少冲突？
+
+```javascript
+// 唯一全局变量
+var kaungApp = {};
+
+// 定义全局变量
+kaungApp.name = 'kaungApp';
+kaungApp.add = function(a,b){
+    return a+b;
+}
+
+```
+
+把自己的代码全部放入自己定义的唯一空间名字中，降低全局冲突的问题
+
+
+
+> 局部作用域
+
+```javascript
+    <script>
+        for (var i = 0;i<100;i++){
+            console.log(i);
+        }
+        console.log(i+1);
+
+    </script>
+```
+
+ES6  let 关键字，解决局部作用域冲突问题！
+
+```javascript
+function aaa(){
+    for(let i=0;i<100;i++){
+        console.log(i);
+    }
+	console.log(i+1);
+}
+
+```
+
+建议大家都是用` let `去定义局部作用域的变亮
+
+
+
+> 常量
+
+在ES6 之前，怎么定义常量，只有用全部大写字母命名的变量就是常量；建议不要修改var
+
+
+
+```javascript
+var PI = '3.14';
+
+console.log(PI);
+PI = '22.2';
+console.log(PI);
+```
+
+在ES6 引入了常量关键字：`const`
+
+
+
+### 4.3 方法
+
+>定义方法
+
+方法就是把函数放在对象的里面，对象只有两个对象：属性和方法
+
+```javascript
+    <script>
+        var wjp = {
+            name:'wjp',
+            birth:'2000',
+            age:function () {
+                var now = new Date().getFullYear();
+                return now- this.birth;
+            }
+        };
+	   	//属性
+        wjp.name
+        //方法，一定要带括号
+        wjp.age();
+    </script>
+```
+
+this是无法指向的，是默认指向调用它的那个对象
+
+>apply
+
+在js中可以控制this指向！
+
+
+
+```javascript
+<script>
+        function getAge(){
+            // 今年 - 出生的年
+            var now = new Date().getFullYear();
+            return now - this.birth;
+        }
+
+        // 定义对象的
+        var wjp = {
+            name:'wjp',
+            birth:'2000',
+            age:getAge
+        };
+
+        var xiaoming = {
+            name:'wjp',
+            birth:'2000',
+            age:getAge
+        };
+
+        // 调用的格式，apply(对象名，参数[]);
+        // 细节问题， getAge 这个时候他是个对象(不能以方法的格式后面带括号)，调用apply方法，并绑定指定对象的同名方法
+        // 这种操作方式，从某种意义上可以进行提炼
+        getAge.apply(wjp,[]);
+
+        getAge.apply(xiaoming,[]);
+
+
+    </script>
 ```
 
 
 
+### 5.对象
 
+>标准对象
 
+```javascript
+typeof 123
+"number"
+typeof '222'
+"string"
+typeof "2222"
+"string"
+typeof true
+"boolean"
+typeof []
+"object"
+typeof NaN
+"number"
+typeof {}
+"object"
+typeof Math.abs
+"function"
+typeof undefined
+"undefined"
+```
 
 
 
+#### 5.1 时间
 
+```java
+        var now = new Date(); //Sat Sep 19 2020 17:28:32 GMT+0800 (中国标准时间)
+        now.getFullYear(); // 年
+        now.getMonth(); // 月 0-11 月
+        now.getDate();  // 日
+        now.getDay();   // 星期几
+        now.getHours(); // 时
+        now.getMinutes(); // 分
+        now.getSeconds(); // 秒
+        now.getTime(); // 时间戳
+```
 
+
 
+#### 5.2 Json
 
+json字符串和js对象的转化
+
+```javascript
+var user = {
+            name:"wjp",
+            age:3,
+            sex:'男'
+        }
 
+// 对象转化为json字符串 {"name":"wjp","age":3,"sex":"男"}
+var jsonUser = JSON.stringify(user);
 
+// json 字符串转化为对象，参数json字符串
+var  userObj = JSON.parse(jsonUser);
 
+{name: "wjp", age: 3, sex: "男"}
+age: 3
+name: "wjp"
+sex: "男"
+__proto__: Object
 
+```
 
 
 
+### 6.面向对象
 
+#### 6.1 什么是面向对象
 
+>class 继承
 
+`class`关键字，是在ES6引入的
 
+1.顶一个类，属性，方法
 
+```javascript
+// 定义一个学生的类
+<script>
+        class Student{
+            constructor(name) {
+                this.name = name;
+            }
 
+            hello(){
+                alert('hello');
+            }
+        }
+        var xiaoming = new Student("xiaoming");
+        var xiaohong = new Student("xiaohong");
+    </script>
 
+```
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```javascript
+console.log(xiaoming)
+VM102:1 Student {name: "xiaoming"}
+undefined
+xiaoming.name
+"xiaoming"
+xiaohong.name
+"xiaohong"
+xiaohong.hello
+ƒ hello(){
+                alert('hello');
+            }
+xiaohong.hello()
+undefined
+```
+
+
+
+2.继承
+
+```
+    <script>
+        class Student{
+            constructor(name) {
+                this.name = name;
+            }
+
+            hello(){
+                alert('hello');
+            }
+        }
+
+        class XiaoStudent extends Student{
+            constructor(name,gradle) {
+                super();
+            }
+
+            myGradle(){
+                alert("小学生");
+            }
+        }
+
+        var xiaoming = new Student("xiaoming");
+        var xiaohong = new Student("xiaohong");
+    </script>
+```
+
+本质：查看对象原型
+
+> 原型链
+
+`__proto__`
 

@@ -6,8 +6,17 @@
     <script>
         var x = 'xxx';
         window.alert(x);
-        var  old_alert = window.alert();
+        var  old_alert = window.alert;
+         old_alert(x)
+        window.alert = function () {
 
+        };
+         // 发现alert() 失效了
+        window.alert(123);
+
+        //恢复
+        window.alert = old_alert;
+        window.alert(354);
     </script>
 </head>
 <body>

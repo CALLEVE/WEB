@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getAge(){
+            // 今年 - 出生的年
+            var now = new Date().getFullYear();
+            return now - this.birth;
+        }
+
+        // 定义对象的
+        var wjp = {
+            name:'wjp',
+            birth:'2000',
+            age:getAge
+        };
+
+        var xiaoming = {
+            name:'wjp',
+            birth:'2000',
+            age:getAge
+        };
+
+        // 调用的格式，apply(对象名，参数[]);有点类似反射或者代理
+        // 细节问题， getAge 这个时候他是个对象(不能以方法的格式后面带括号)，调用apply方法，并绑定指定对象的同名方法
+        // 这种操作方式，从某种意义上可以进行提炼
+        getAge.apply(wjp,[]);
+
+        getAge.apply(xiaoming,[]);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
