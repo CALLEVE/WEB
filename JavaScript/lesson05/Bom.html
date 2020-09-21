@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function changeContent(){
+            document.getElementById("td1").innerHTML = "sdada";
+        }
+    </script>
+</head>
+<body>
+    <tl id="tl1">
+        <td id="td1">前端技术点</td>
+        <dd id="dd1">HTML</dd>
+        <dd id="dd2">CSS</dd>
+        <dd id="dd3">JS</dd>
+        <dd id="dd4">Java</dd>
+        <dd id="dd5">Java Web</dd>
+    </tl>
+    <form>
+        <input type="button" onclick="changeContent()" value="Change content">
+    </form>
+    <script>
+        let d = document.getElementById('tl1');
+    </script>
+
+</body>
+</html>

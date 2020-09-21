@@ -879,7 +879,7 @@ this是无法指向的，是默认指向调用它的那个对象
 
 
 
-### 5.对象
+## 5.对象
 
 >标准对象
 
@@ -949,9 +949,9 @@ __proto__: Object
 
 
 
-### 6.面向对象
+## 6.面向对象
 
-#### 6.1 什么是面向对象
+### 6.1 什么是面向对象
 
 >class 继承
 
@@ -1031,4 +1031,237 @@ undefined
 > 原型链
 
 `__proto__`
+
+
+
+## 7.操作BOM对象
+
+> window
+
+window代表 浏览器窗口
+
+```javascript
+window.innerHeight
+655
+window.innerWidth
+970
+Window
+ƒ Window() { [native code] }
+window.outerHeight
+743
+window.outerWidth
+986
+window.innerWidth
+970
+```
+
+
+
+> Navigator
+
+Navigator 赋封装了浏览器的信息
+
+```javascript
+navigator.appName
+"Netscape"
+navigator.appVersion
+"5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36"
+navigator.userAgent
+"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36"
+navigator.platform
+"Win32"
+```
+
+大多数时候，我们不会使用 `Navigator `对象，因为会被人为修改。
+
+
+
+> screen
+
+代表屏幕尺寸（分辨率）
+
+```javascript
+screen.width
+1920
+screen.height
+1080
+```
+
+
+
+> location()
+
+location 代表当前页面的URL信息
+
+```javascript
+host:"www.baidu.com"
+href:"https://www.baidu.com/"
+protocol:"https"
+reload:f reload()
+//设置新的地址
+location.assign('https://www.bilibili.com/')
+```
+
+
+
+> document
+
+```javascript
+document.title
+"百度一下，你就知道"
+document.title="test"
+"test"
+```
+
+获取具体的文档树节点
+
+
+
+## 8.操作DOM
+
+> 核心
+
+浏览器网页就是一个dom树形结构
+
+- 更新：更新Dom节点
+- 遍历dom节点：得到Dom节点
+- 删除：删除一个Dom节点
+- 添加：添加一个新的节点
+
+要操作一个dom节点必须先获取这个Dom节点
+
+> 获得dom节点
+
+```javascript
+<script>
+    var h1 = document.getElementsByTagName('h1');
+    var p1 = document.getElementById('p1');
+    var p2 = document.getElementsByClassName('p2');
+    var father  = document.getElementById('father');
+
+    var childrens = father.children;
+</script>
+```
+
+
+
+>更新节点
+
+```javascript
+<div id="div1">
+
+</div>
+<script>
+    var div1 = document.getElementById('div1');
+    div1.innerText = "5555";
+</script>
+```
+
+操作文本
+
+`div1.innerText = "5555";`修改文本的值
+
+`div1.innerHTML = '<strong>123</strong>';` 解析HTML文本标签
+
+操作js
+
+```javascript
+div1.style.color = 'red';     // 属性使用字符串
+div1.style.fontSize = '20px'; // 转驼峰命名
+div1.style.padding = '2em';
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
