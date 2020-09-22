@@ -1171,29 +1171,123 @@ div1.style.fontSize = '20px'; // 转驼峰命名
 div1.style.padding = '2em';
 ```
 
+> 删除节点
+
+通过父节点删除子节点
+
+```javascript
+<div id="father">
+    <h1>标题1</h1>
+    <p id = "p1">p1</p>
+    <p class="p2">p2</p>
+</div>
+
+<script>
+    father.removeChild(p1)    
+</script>
+
+
+
+```
+
+
+
+还有一种方式，先找父类，通过父类再把自己干掉
+
+```javascript
+var self = document.getElementById('p1')
+undefined
+var fath = self.parentElement
+undefined
+fath.removeChild(self)
+<p id=​"p1">​p1​</p>​
+
+
+//删除是一个动态的的过程
+```
+
+注意：删除多个节点的时候，children是在时刻变化的，删除节点的时候  需要注意。
+
+
+
+> 插入节点
+
+获取了某个Dom节点，假设这个dom节点是空的，我们通过innerHTML，就可以一个元素了，但是这个Dom节点已经存在元素了，则而上述方法不行。
+
+
+
+>追加操作
 
 
 
 
 
+```
+<p id="js">JavaScript</p>
+<div id="list">
+    <p id="se">JavaSE</p>
+    <p id="ee">JavaEE</p>
+    <p id="me">JavaME</p>
+</div>
+
+var js = document.getElementById('js')
+undefined
+var list = document.getElementById('list')
+undefined
+list.appendChild(js)
+<p id=​"js">​JavaScript​</p>​
+```
+
+追加的实际效果是，会把目标元素添加到指定元素下
+
+![image-20200922142252728](JavaScript.assets/image-20200922142252728.png)
+
+> 创建一个新的标签，实现插入
+
+```html
+ var js = document.getElementById('js')
+    var list = document.getElementById('list')
+    //通过js创建一个新的节点
+    var newP = document.createElement('p');
+    newP.id = 'newP';
+    newP.innerText = 'newP';
+    list.appendChild(newP);
+	//创建一个标签节点（通过这个属性，可以设置任意的值）
+	var myScript = documnet.createElement('script');
+	myScript.setAttribute('type','text/javascript');
+
+```
 
 
 
+>insertBefore
 
 
 
+```javascript
+<p id="js">JavaScript</p>
+<div id="list">
+    <p id="se">JavaSE</p>
+    <p id="ee">JavaEE</p>
+    <p id="me">JavaME</p>
+</div>
+<script>
+    var ee = document.getElementById('ee');
+    var js = document.getElementById('js');
+    var list = document.getElementById('list');
+    // 需要利用父级节点的特性来完成
+    // 通过父级节点调用insertBefore
+    list.insertBefore(js,ee);
+</script>
+
+
+```
 
 
 
+## 9.操作表单（验证）
 
-
-
-
-
-
-
-
-
+> 表单是什么  form DOM树
 
 
 

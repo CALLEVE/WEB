@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c2f912e-c199-48c5-aecc-75c44e5fccee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../JavaScript/lesson05/Bom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaScript/lesson05/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaScript/JavaScript.md" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaScript/JavaScript.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaScript/lesson03/作用域2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaScript/lesson03/作用域2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="ServiceViewManager">
@@ -60,6 +65,7 @@
       <workItem from="1593433549957" duration="3666000" />
       <workItem from="1594039916983" duration="86000" />
       <workItem from="1597747876064" duration="24000" />
+      <workItem from="1600667104234" duration="888000" />
     </task>
     <servers />
   </component>
