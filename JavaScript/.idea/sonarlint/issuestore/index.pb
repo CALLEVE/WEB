@@ -29,3 +29,13 @@ J
 lesson04/面向对象.html,3\5\353d9a2eab9ae191d7ab8436c6bc244d85cf2f29
 A
 lesson04/类.html,2\0\20b6f3dcd6bfeb604be8593ee8cc11ae0037a4d9
+K
+lesson06/插入节点1.html,0\b\0be23e90352f92a6ebe184cec9cb35a78dcc20e5
+J
+lesson06/提交表单.html,3\a\3a911b5c0853ef2b5f51e5bf00dee8b2670bbe11
+P
+ lesson07/lib/jquery-3.5.1.min.js,a\2\a28acc73268e837bc4a4dcbc7a5d20dc946a52ac
+L
+lesson07/lib/jquery-3.5.1.js,a\e\aea3180a5c7b47ce5b5cf5fdc0d1b23b3da4d8f7
+J
+lesson07/初始jQuery.html,a\e\aeb85c45db286185c00afa291a9cff6e3f667da3

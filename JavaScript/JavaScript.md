@@ -1311,6 +1311,8 @@ boy_radio.checked;
 girl_radoi.checked = true;
 ```
 
+通过boy_radio.checked判断是否被选定
+
 
 
 > 提交表单
