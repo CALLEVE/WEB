@@ -1291,6 +1291,32 @@ list.appendChild(js)
 
 
 
+```javascript
+<body>
+<form action="">
+    <span>用户名</span><input type="text" id="username">
+</form>
+
+<script>
+    var user =  document.getElementById('username');
+    user.value = '55555';
+</script>
+</body>
+```
+
+备注：对于单选框和多选框，只能取到当前的值
+
+```javascript
+boy_radio.checked;
+girl_radoi.checked = true;
+```
+
+
+
+> 提交表单
+
+
+
 
 
 
