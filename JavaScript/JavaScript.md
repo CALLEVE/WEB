@@ -1321,15 +1321,115 @@ girl_radoi.checked = true;
 
 
 
+## 10.jQuery
 
 
 
+jQuery公式：$(selector).action()
 
 
 
+```javascript
+
+<a href="" id="test-jQuery">点我</a>
+
+<script>
+    $('#test-jQuery').click(function () {
+        alert('hello');
+    });
+
+</script>
+
+
+```
 
 
 
+> 选择器
+
+```java
+<body>
+<p id="pid" class="pclass"></p>
+<script>
+    $('p').click();//标签选择器
+    $('#pid').click();//id选择器
+    $('.pclass').click();//类选择器
+
+
+</script>
+
+</body>
+```
+
+```txt
+https://jquery.cuishifeng.cn/
+```
+
+
+
+> 事件
+
+鼠标事件，键盘事件，其他事件
+
+
+
+```html
+<body>
+<!-- 要求：获取鼠标的移动轨迹（或者一个坐标）     -->
+mouse:<span id="mouseMove"></span>
+<div id="divMove">
+在这里移动鼠标试试
+</div>
+<script>
+    //当网页元素加载完毕之后，响应事件
+    //  $(function () 这种写法，应该是能实现上述的要求
+    $(function () {
+        $('#divMove').mousemove(function (e) {
+            $('#mouseMove').text('x:'+e.pageX+',y:'+e.pageY);
+        });
+    });
+
+</script>
+</body>
+```
+
+
+
+> 操作dom
+
+```javascript
+<script>
+    //获取值
+    $('#test-ui li[id=Java]').text();
+
+    $('#test-ui li[class=js]').text();
+
+    $('#test-ui li[name=Python]').text();
+	
+	//设置值
+	
+
+</script>
+```
+
+
+
+CSS操作
+
+
+
+```javascript
+$('#test-ui li[id=Java]').css('color','red');
+```
+
+
+
+元素的显示和隐藏
+
+```javascript
+$('#test-ui li[id=Java]').show()
+$('#test-ui li[id=Java]').hide()
+```
 
 
 

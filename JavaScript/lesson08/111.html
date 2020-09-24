@@ -1,0 +1,377 @@
+@{
+//后置派单
+ViewBag.Title = "AssignList";
+Layout = "~/Views/Shared/_BaseLayout.cshtml";
+}
+
+@section head{
+}
+
+<div class="layui-fluid">
+    <div class="layui-tab layui-tab-card layui-custom-page-tab" lay-filter="AssignListTab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">待派单</li>
+            <li class="">已派单</li>
+        </ul>
+        <div class="layui-tab-content layui-custom-page-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form layui-card-header layuiadmin-card-header-auto" lay-filter="searchPendingForm" lay-form-mode="explorer">
+                    <div class="layui-form-item layui-row">
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">(非)报关单号：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="entryId" class="layui-input" placeholder="报关单号/非报关单号" lay-search-type="like">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">后置处置单号：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="subRecordNo" class="layui-input" placeholder="后置处置分/总单号">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">舱单号：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="manifestId" class="layui-input" lay-search-type="like" placeholder="舱单号">
+                            </div>
+                        </div>
+                        @*<div class="layui-col-xs3">
+                        <label class="layui-form-label">提运单号：</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="billNo" class="layui-input" lay-search-type="like" placeholder="提运单号" />
+                        </div>
+                    </div>*@
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">集装箱号：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="contaId" class="layui-input" lay-search-type="like" placeholder="集装箱号">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-row">
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">查验方式：</label>
+                            <div class="layui-input-block">
+                                <select name="checkType"><option value="">全部</option><option value="1">人工</option><option value="2">机检</option><option value="3">机检加人工</option></select>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">流转标识：</label>
+                            <div class="layui-input-block">
+                                <select name="transferFlag">
+                                    <option value="">全部</option>
+                                    <option value="0">非流转</option>
+                                    <option value="1">流转</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">指令下达时间：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="distributeTimeStart" class="layui-input datetime" placeholder="开始时间">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">至：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="distributeTimeEnd" class="layui-input datetime" placeholder="结束时间">
+                            </div>
+                        </div>
+                        @*<div class="layui-col-xs3">
+                        <label class="layui-form-label">单证类型：</label>
+                        <div class="layui-input-block">
+                            <select name="documentType">
+                                <option value="">全部</option>
+                                <option value="B">舱单</option>
+                                <option value="B1">空箱</option>
+                                <option value="B2">空车</option>
+                                <option value="B3">非报</option>
+                            </select>
+                        </div>
+                    </div>*@
+                    </div>
+                    <div class="layui-form-item layui-row">
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">接单时间：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="ordersTimeStart" class="layui-input datetime" placeholder="开始时间">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">至：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="ordersTimeEnd" class="layui-input datetime" placeholder="结束时间">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">接单人员：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="ordersPersonName" class="layui-input" lay-search-type="like" placeholder="接单人员">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">查验地点：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="preChkSiteName" class="layui-input" lay-search-type="like" placeholder="查验地点">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-row">
+                        <div class="layui-col-xs12 button-line-height" style="text-align:right">
+                            <button class="layui-btn layui-btn-normal" lay-submit lay-filter="pending-search-btn">
+                                <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>&nbsp;查&nbsp;&nbsp;询
+                            </button>
+                            <button class="layui-btn" lay-submit lay-filter="pending-batch-btn">
+                                <i class="icon iconfont-cainiao icon-danju-xianxing"></i>&nbsp;批量派单
+                            </button>
+                            <button class="layui-btn layui-btn-primary" type="reset">
+                                <i class="layui-icon layui-icon-refresh-3 layuiadmin-button-btn"></i>&nbsp;重&nbsp;&nbsp;置
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-card-body">
+                    <table id="pending-search-list" lay-filter="pending-search-list"></table>
+                </div>
+            </div>
+            <div class="layui-tab-item">
+                <form class="layui-form layui-card-header layuiadmin-card-header-auto" lay-filter="searchAssignForm" lay-form-mode="explorer">
+                    <div class="layui-form-item layui-row">
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">(非)报关单号：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="entryId" class="layui-input" placeholder="报关单号/非报关单号" lay-search-type="like">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">后置处置单号：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="subRecordNo" class="layui-input" placeholder="后置处置分/总单号">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">舱单号：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="manifestId" class="layui-input" lay-search-type="like" placeholder="舱单号">
+                            </div>
+                        </div>
+                        @*<div class="layui-col-xs3">
+                        <label class="layui-form-label">提运单号：</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="billNo" class="layui-input" lay-search-type="like" placeholder="提运单号" />
+                        </div>
+                    </div>*@
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">集装箱号：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="contaId" class="layui-input" lay-search-type="like" placeholder="集装箱号">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-row">
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">查验方式：</label>
+                            <div class="layui-input-block">
+                                <select name="checkType"><option value="">全部</option><option value="1">人工</option><option value="2">机检</option><option value="3">机检加人工</option></select>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">流转标识：</label>
+                            <div class="layui-input-block">
+                                <select name="transferFlag">
+                                    <option value="">全部</option>
+                                    <option value="0">非流转</option>
+                                    <option value="1">流转</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">接单时间：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="ordersTimeStart" class="layui-input datetime" placeholder="开始时间">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">至：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="ordersTimeEnd" class="layui-input datetime" placeholder="结束时间">
+                            </div>
+                        </div>
+                        @*<div class="layui-col-xs3">
+                        <label class="layui-form-label">单证类型：</label>
+                        <div class="layui-input-block">
+                            <select name="documentType">
+                                <option value="">全部</option>
+                                <option value="B">舱单</option>
+                                <option value="B1">空箱</option>
+                                <option value="B2">空车</option>
+                                <option value="B3">非报</option>
+                            </select>
+                        </div>
+                    </div>*@
+                    </div>
+                    <div class="layui-form-item layui-row">
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">接单人：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="ordersPersonName" class="layui-input" placeholder="接单人">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">查验地点：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="preChkSiteName" class="layui-input" lay-search-type="like" placeholder="查验地点">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">派单时间：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="assignTimeStart" class="layui-input datetime" placeholder="开始时间">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">至：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="assignTimeEnd" class="layui-input datetime" placeholder="结束时间">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-row">
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">派单人：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="assignPersonName" class="layui-input" lay-search-type="like" placeholder="派单人">
+                            </div>
+                        </div>
+                        <div class="layui-col-xs3">
+                            <label class="layui-form-label">流程状态：</label>
+                            <div class="layui-input-block">
+                                <select name="wfStatus">
+                                    <option value="3,4,5">全部</option>
+                                    <option value="3">待处置</option>
+                                    <option value="4">已提交</option>
+                                    <option value="5">发送异常</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-xs6 button-line-height" style="text-align:right">
+                            <button class="layui-btn layui-btn-normal" lay-submit lay-filter="assign-search-btn">
+                                <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>&nbsp;查&nbsp;&nbsp;询
+                            </button>
+                            <button class="layui-btn layui-btn-danger" lay-submit lay-filter="assign-delete-btn">
+                                <i class="layui-icon layui-icon-delete layuiadmin-button-btn"></i>&nbsp;派单作废
+                            </button>
+                            <button class="layui-btn layui-btn-primary" type="reset">
+                                <i class="layui-icon layui-icon-refresh-3 layuiadmin-button-btn"></i>&nbsp;重&nbsp;&nbsp;置
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="layui-card-body">
+                    <table id="assigned-search-list" lay-filter="assigned-search-list"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+@{
+Html.RenderPartial("~/Views/Templet/TableCommonPopup.cshtml");
+}
+<script type="text/html" id="table-assign-toolbar-pending">
+    <a class="layui-btn layui-btn-xs" lay-event="assign"><i class="icon iconfont-cainiao icon-danju-xianxing"></i>&nbsp;派单</a>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail"><i class="icon iconfont-cainiao icon-sousuo-xianxing"></i>&nbsp;详情</a>
+</script>
+<script type="text/html" id="table-assign-toolbar-order">
+    {{#  if(d.WF_STATUS && d.WF_STATUS == "3" && ((d.APPLY_APPROVAL_STATUS != null && d.APPLY_APPROVAL_STATUS.indexOf('1') < 0) || d.APPLY_APPROVAL_STATUS == null)){ }}
+    <a class="layui-btn layui-btn-xs" lay-event="people"><i class="icon iconfont-cainiao icon--kefu-xianxing"></i>&nbsp;人工干预</a>
+    {{#  } else{ }}
+    <a class="layui-btn layui-btn-disabled layui-btn-xs" lay-event="people"><i class="icon iconfont-cainiao icon--kefu-xianxing"></i>&nbsp;人工干预</a>
+    {{#  } }}
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail"><i class="icon iconfont-cainiao icon-sousuo-xianxing"></i>&nbsp;详情</a>
+</script>
+
+<script>
+    layui.config({
+        base: '@ViewData["appRootPath"]Content/' //静态资源所在路径
+    }).extend({
+        main: 'core/main',
+        assignList: 'afterWork/assignList',
+    }).use(['main', 'assignList']);
+</script>
+}
+
+@section layer{
+<div id="batchAssign" class="layui-fluid" style="padding:20px 20px 0 20px; display:none;">
+    <form class="layui-form" action="" lay-filter="orderAssign">
+        <div class="layui-card-body">
+            <table class="layui-table" id="pending-checked-list" lay-filter="pending-checked-list"></table>
+        </div>
+    </form>
+</div>
+<div id="batchAssignPersonInfo" class="layui-fluid" style="padding:20px 20px 0 20px; display:none;">
+    <form class="layui-form" action="" lay-filter="orderAssign">
+        <div class="layui-card-header"><b id="selectSiteName">查验地点：XXXXX场地</b><b style="margin-left:45px;">资质要求：</b><span id="txtQualification">无</span></div>
+        <div class="layui-card-body">
+            <table class="layui-table" id="pending-person-list" lay-filter="pending-person-list"></table>
+        </div>
+    </form>
+</div>
+
+
+<div class="layui-card" id="assignDelete" style="display:none">
+    <form id="deleteForm" class="layui-form layui-card-body" lay-filter="deleteForm">
+        <fieldset class="layui-elem-field">
+            <legend>作废原因</legend>
+            <div class="layui-field-box">
+                <textarea name="invalidReason" placeholder="请输入作废理由" class="layui-textarea" lay-verify="required" lay-verItem="作废理由"></textarea>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<div class="layui-card" id="manualIntervention" style="display:none">
+    <div class="layui-card-body">
+        <div class="layui-collapse">
+            <div class="layui-card-header" style="background:#e2e2e2">人员选取</div>
+            <div class="layui-card-body">
+                <div class="layui-row">
+                    <div class="layui-col-xs10" style="margin-left:10px;">
+                        <b style="font-size:16px;">资质要求：</b><span id="qualification">无</span>
+                    </div>
+                </div>
+                <div class="layui-row" style="margin-top: 10px;">
+                    <div class="layui-col-xs5">
+                        <div class="layui-card-header" style="line-height: 30px; height: 30px"><b>在岗人员</b></div>
+                        <div class="layui-card-body" style="padding: 0 10px;">
+                            <table id="on-duty-list" lay-filter="on-duty-list" class="layui-table"></table>
+                        </div>
+                    </div>
+                    <div class="layui-col-xs1" style="top:90%;transform:translateY(90%);">
+                        @*选择按钮*@
+                        <button class="layui-btn layui-btn-primary layui-btn-sm" style="margin-left:35px;" id="btnSelect"><i class="layui-icon layui-icon-next layuiadmin-button-btn"></i></button>
+                        <br /><br />
+                        @*删除按钮*@
+                        <button class="layui-btn layui-btn-primary layui-btn-sm" style="margin-left:35px;" id="btnDelete"><i class="layui-icon layui-icon-prev layuiadmin-button-btn"></i></button>
+                    </div>
+                    <div class="layui-col-xs5">
+                        <div class="layui-card-header" style="line-height: 30px; height: 30px"><b>已选人员</b></div>
+                        <div class="layui-card-body" style="padding: 0 10px;">
+                            <table id="select-list" lay-filter="select-list" class="layui-table"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="layui-card-header" style="background:#e2e2e2">理由填写</div>
+            <div class="layui-card-body">
+                <form class="layui-form" action="" lay-filter="interventionForm" id="interventionForm">
+                    <textarea id="intervenReason" placeholder="请输入人工干预理由" class="layui-textarea" lay-verify="required" lay-verItem="人工干预理由"></textarea>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
