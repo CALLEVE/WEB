@@ -48,7 +48,7 @@ div {
 
 
 
-有个小常识或者小技巧，在块元素中，height和line如果是一致的：height=line-height，那么可以得到的是只有一行字体的时候，可以实现元素垂直居中，与之形成对比的是，text-align 可以实现水平居中
+有个小常识或者小技巧，在块元素中，height和line如果是一致的：height=line-height，那么可以得到的是只有一行字体的时候，可以实现元素垂直居中，与之形成对比的是，text-align 可以实现水平居中。
 
 
 
